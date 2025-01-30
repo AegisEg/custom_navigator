@@ -58,7 +58,7 @@ class CustomNavigator extends StatefulWidget {
 }
 
 class _CustomNavigatorState extends State<CustomNavigator>
-    implements WidgetsBindingObserver {
+    with WidgetsBindingObserver {
   GlobalKey<NavigatorState> _navigator;
 
   void _setNavigator() =>
@@ -102,7 +102,7 @@ class _CustomNavigatorState extends State<CustomNavigator>
   void didChangeAppLifecycleState(AppLifecycleState state) {}
 
   @override
-  void didChangeLocales(List<Locale> locale) {}
+  void didChangeLocales(List<Locale>? locale) {}
 
   @override
   void didChangeMetrics() {}
