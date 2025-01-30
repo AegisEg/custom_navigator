@@ -58,7 +58,7 @@ class CustomNavigator extends StatefulWidget {
 }
 
 class _CustomNavigatorState extends State<CustomNavigator>
-    with WidgetsBindingObserver {
+    implements WidgetsBindingObserver {
   GlobalKey<NavigatorState> _navigator;
 
   void _setNavigator() =>
@@ -69,6 +69,11 @@ class _CustomNavigatorState extends State<CustomNavigator>
   Future<bool> didPushRouteInformation(RouteInformation routeInformation) {
     return didPushRoute(routeInformation.location);
   }
+
+  @override
+Future<AppExitResponse> didRequestAppExit() async {
+  return AppExitResponse.exit;
+}
 
   @override
   void initState() {
